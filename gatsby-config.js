@@ -33,6 +33,20 @@ module.exports = {
         trackingId: "YOUR_GOOGLE_ANALYTICS_TRACKING_ID",
       }
     },
+    {
+      resolve: `gatsby-plugin-styled-components`,
+      options: {
+        displayName: process.env.NODE_ENV !== 'production'
+      },
+    },
+    {
+      resolve: `gatsby-plugin-page-creator`,
+      options: {
+        path: `${__dirname}/src/pages`,
+        ignore: [`**/styles.(js)`],
+        options: { nocase: true }
+      },
+    },
     `gatsby-plugin-offline`
   ]
 }
